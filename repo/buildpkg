@@ -1,7 +1,0 @@
-#!/bin/bash
-
-rm vigarch.db vigarch.files
-repo-add vigarch.db.tar.gz *.pkg.tar.zst
-rm vigarch.db vigarch.files
-mv vigarch.db.tar.gz vigarch.db
-mv vigarch.files.tar.gz vigarch.files
