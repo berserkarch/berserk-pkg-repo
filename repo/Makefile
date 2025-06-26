@@ -1,4 +1,4 @@
-REPO_NAME = vigarch
+REPO_NAME = berserkarch
 
 REPO_DB = $(REPO_NAME).db
 REPO_FILES = $(REPO_NAME).files
