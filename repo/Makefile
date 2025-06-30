@@ -16,7 +16,7 @@ $(REPO_DB): $(PKGS)
 	rm -f $(REPO_DB) $(REPO_FILES) $(REPO_DB_SIG) $(REPO_FILES_SIG)
 
 	@echo "==> Creating and signing repository database..."
-	GPGKEY=$(GPG_KEY_ID) repo-add --sign --key $(GPG_KEY_ID) $(REPO_DB).tar.gz $(PKGS)
+	repo-add --sign --key $(GPG_KEY_ID) $(REPO_DB).tar.gz $(PKGS)
 
 	@echo "==> Renaming database and signature to final names..."
 	mv $(REPO_DB).tar.gz $(REPO_DB)
