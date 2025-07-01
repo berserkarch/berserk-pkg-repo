@@ -1,21 +1,30 @@
-![Vigarch](https://placehold.co/800x200/282a36/f8f8f2?text=Berserk+PKG+Core)
+![Vigarch](https://placehold.co/800x200/282a36/f8f8f2?text=Berserkarch+Core)
 
 ## Installation
 
 Add the following code snippet to your `/etc/pacman.conf`:
 
 ```bash
-[berserkarch]
-SigLevel = Optional TrustAll
-Server = https://gitlab.com/berserkarch/berserk-packages/berserk-pkg-builds/-/raw/main/repo
+# Entry in file /etc/pacman.conf:
+[berserkarch-core]
+SigLevel = Required DatabaseOptional
+Include = /etc/pacman.d/berserk-mirrorlist
+#
+[berserkarch-aur]
+SigLevel = Required DatabaseOptional
+Include = /etc/pacman.d/berserk-mirrorlist
+#
+[berserkarch-extra]
+SigLevel = Required DatabaseOptional
+Include = /etc/pacman.d/berserk-mirrorlist
 ```
 
 ```bash
-# Add the key to pacman's keychain
-sudo pacman-key --add gauravraj_pubkey.asc
-
-# Locally sign the key, telling pacman you trust it to sign packages
+sudo pacman-key --init
+sudo pacman-key --populate
+sudo pacman-key --recv-keys B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
 sudo pacman-key --lsign-key B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
+sudo pacman -Syy --noconfirm
 ```
 
 Then, run `sudo pacman -Sy` to update repository.
