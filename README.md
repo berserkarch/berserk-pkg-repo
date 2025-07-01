@@ -1,4 +1,4 @@
-![Vigarch](https://placehold.co/800x200/282a36/f8f8f2?text=Berserkarch+Core)
+![Berserkarch Core](https://placehold.co/800x200/282a36/f8f8f2?text=Berserkarch+Core)
 
 ## Installation
 
